@@ -13,7 +13,7 @@ public class UserController {
 
     private static final String CONTEXT = "/users";
 
-    private static final String PARAM_ID = ":userid";
+    private static final String PARAM_ID = ":id";
 
     private static final String BY_ID = CONTEXT + "/" + PARAM_ID;
 
@@ -58,7 +58,7 @@ public class UserController {
 
                 User u = userService.updateUser(updated).cleanSensitiveData();
                 if (u != null){
-                    res.status(204);
+                    res.status(200);
                     return u;
                 }
 
