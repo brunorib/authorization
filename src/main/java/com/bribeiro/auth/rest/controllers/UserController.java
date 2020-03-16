@@ -1,5 +1,7 @@
 package com.bribeiro.auth.rest.controllers;
 
+import com.bribeiro.auth.rest.application.exceptions.ServerException;
+import com.bribeiro.auth.rest.application.exceptions.UserAlreadyExistsException;
 import com.bribeiro.auth.rest.application.model.User;
 import com.bribeiro.auth.rest.services.UserService;
 import com.bribeiro.auth.rest.utils.JsonUtil;
@@ -25,23 +27,43 @@ public class UserController {
             int userId =  Integer.parseInt(req.params(PARAM_ID));
             User u = userService.getUser(userId);
             if (u != null) {
-                return u;
+                return u.cleanSensitiveData();
             }
             res.status(404);
             return new ResponseError("No user with id %s found", userId);
         }, jsonUtil.json());
 
         post(CONTEXT, (req, res) -> {
-            User u = jsonUtil.fromJson(req.body(), User.class);
-            return userService.createUser(u).getId();
+            try {
+                User u = userService.createUser(
+                        jsonUtil.fromJson(req.body(), User.class))
+                        .cleanSensitiveData();
+                res.status(201);
+                return u;
+            } catch (UserAlreadyExistsException e) {
+                res.status(500);
+                return new ResponseError("Username or email already taken");
+            } catch (ServerException e) {
+                res.status(500);
+                return new ResponseError("Server error");
+            }
         }, jsonUtil.json());
 
         put(BY_ID, (req, res) -> {
             int userId =  Integer.parseInt(req.params(PARAM_ID));
+
             if (userService.findById(userId)) {
-                User u = jsonUtil.fromJson(req.body(), User.class);
-                u.setId(userId);
-                return userService.updateUser(u);
+                User updated = jsonUtil.fromJson(req.body(), User.class);
+                updated.setId(userId);
+
+                User u = userService.updateUser(updated).cleanSensitiveData();
+                if (u != null){
+                    res.status(204);
+                    return u;
+                }
+
+                res.status(500);
+                return new ResponseError("Could not update user");
             }
             res.status(404);
             return new ResponseError("No user with id %s found", userId);
