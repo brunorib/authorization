@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="301854db-594f-4e42-ab39-acf8e66e4867" name="Default Changelist" comment="" />
+    <list default="true" id="301854db-594f-4e42-ab39-acf8e66e4867" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/application/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/application/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/application/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/application/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/application/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/application/repository/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/services/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/application/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/application/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/application/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/application/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/application/repository/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/application/repository/UserRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/services/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bribeiro/auth/rest/services/impl/UserServiceImpl.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +35,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -29,18 +52,20 @@
   </component>
   <component name="ProjectId" id="1U4ZXRPOH2YCjk9EOa2Gnv3z5Uk" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bribeiro.auth.rest.application.exceptions" />
+      <recent name="rest.application.model" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/config" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="rest.application.model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -148,21 +173,24 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.0.Final/hibernate-core-5.4.0.Final.jar!/org/hibernate/internal/SessionImpl.class</url>
-          <line>776</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar!/javax/persistence/EntityManager.class</url>
-          <line>18</line>
-          <properties class="javax.persistence.EntityManager" method="merge">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/bribeiro/auth/rest/services/impl/LoginServiceImpl.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
