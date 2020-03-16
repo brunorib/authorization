@@ -21,6 +21,9 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public User getUserById(int id) {
         User u = em.find(User.class, id);
+        if (u == null) {
+            return null;
+        }
         em.detach(u);
         return u;
     }
@@ -80,9 +83,8 @@ public class UserRepositoryImpl implements UserRepository {
             persisted.setPassword(u.getPassword());
             persisted.setSalt(u.getSalt());
         }
-
-        em.getTransaction().commit();
         em.flush();
+        em.getTransaction().commit();
         return persisted;
     }
 }
