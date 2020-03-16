@@ -1,5 +1,7 @@
 package com.bribeiro.auth.rest.services.impl;
 
+import com.bribeiro.auth.rest.application.exceptions.ServerException;
+import com.bribeiro.auth.rest.application.exceptions.UserAlreadyExistsException;
 import com.bribeiro.auth.rest.application.model.User;
 import com.bribeiro.auth.rest.application.repository.UserRepository;
 import com.bribeiro.auth.rest.application.repository.UserRepositoryImpl;
@@ -24,17 +26,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User createUser(User u) {
-        byte[] saltAsBytes = new byte[SALT_LEN];
-        random.nextBytes(saltAsBytes);
-        char[] salt = Hex.encodeHex(saltAsBytes);
-        u.setPassword(HashUtil.hashPassword(u.getPassword(), salt));
-        u.setSalt(salt);
+    public User createUser(User u) throws UserAlreadyExistsException, ServerException {
+        setPassword(u);
         return repository.saveUser(u);
     }
 
     @Override
     public User updateUser(User u) {
+        if(u.getPassword() != null) {
+            setPassword(u);
+        }
         return repository.updateUser(u);
     }
 
@@ -46,5 +47,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUsername(String username) {
         return repository.getUserByUsername(username);
+    }
+
+    private void setPassword(User u) {
+        byte[] saltAsBytes = new byte[SALT_LEN];
+        random.nextBytes(saltAsBytes);
+        char[] salt = Hex.encodeHex(saltAsBytes);
+        u.setPassword(HashUtil.hashPassword(u.getPassword(), salt));
+        u.setSalt(salt);
     }
 }

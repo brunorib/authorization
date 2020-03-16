@@ -60,4 +60,10 @@ public class User {
     public void setSalt(char[] salt) {
         this.salt = salt;
     }
+
+    public User cleanSensitiveData() {
+        this.password = null;
+        this.salt = null;
+        return this;
+    }
 }

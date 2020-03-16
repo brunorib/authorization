@@ -1,5 +1,7 @@
 package com.bribeiro.auth.rest.services;
 
+import com.bribeiro.auth.rest.application.exceptions.ServerException;
+import com.bribeiro.auth.rest.application.exceptions.UserAlreadyExistsException;
 import com.bribeiro.auth.rest.application.model.User;
 
 public interface UserService {
@@ -15,7 +17,7 @@ public interface UserService {
      * @param u User
      * @return
      */
-    User createUser(User u);
+    User createUser(User u) throws UserAlreadyExistsException, ServerException;
 
     /**
      * updates a specific user
