@@ -41,9 +41,18 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <version>${jib.version}</version>
                 <configuration>
+                    <from>
+                        <image>openjdk:8u222-jre</image>
+                    </from>
                     <to>
-                        <image>myimage</image>
+                        <image>docker.io/brunoribca/${project.artifactId}:${project.version}</image>
                     </to>
+                    <container>
+                        <ports>
+                            <port>8080</port>
+                        </ports>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                    </container>
                 </configuration>
             </plugin>
         </plugins>
