@@ -3,7 +3,7 @@ package com.bribeiro.auth.rest.application.repository;
 import com.bribeiro.auth.config.SqlConfig;
 import com.bribeiro.auth.rest.application.exceptions.ServerException;
 import com.bribeiro.auth.rest.application.exceptions.UserAlreadyExistsException;
-import com.bribeiro.auth.rest.application.model.User;
+import com.bribeiro.auth.rest.application.db.model.User;
 
 import javax.persistence.*;
 import java.util.List;
@@ -49,6 +49,7 @@ public class UserRepositoryImpl implements UserRepository {
         try {
             em.getTransaction().begin();
             em.persist(u);
+            em.flush();
             em.getTransaction().commit();
         } catch(RollbackException e) {
             //log
@@ -67,6 +68,7 @@ public class UserRepositoryImpl implements UserRepository {
         em.getTransaction().begin();
         User u = em.find(User.class, id);
         em.remove(u);
+        em.flush();
         em.getTransaction().commit();
     }
 

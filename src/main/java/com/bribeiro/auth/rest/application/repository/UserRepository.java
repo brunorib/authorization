@@ -2,7 +2,7 @@ package com.bribeiro.auth.rest.application.repository;
 
 import com.bribeiro.auth.rest.application.exceptions.ServerException;
 import com.bribeiro.auth.rest.application.exceptions.UserAlreadyExistsException;
-import com.bribeiro.auth.rest.application.model.User;
+import com.bribeiro.auth.rest.application.db.model.User;
 
 public interface UserRepository {
 

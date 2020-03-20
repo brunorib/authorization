@@ -1,9 +1,9 @@
 package com.bribeiro.auth.rest.services.impl;
 
-import com.bribeiro.auth.rest.common.models.AuthToken;
+import com.bribeiro.auth.rest.application.model.AuthToken;
 import com.bribeiro.auth.rest.services.LoginService;
 import com.bribeiro.auth.rest.application.exceptions.IncorrectLoginException;
-import com.bribeiro.auth.rest.application.model.User;
+import com.bribeiro.auth.rest.application.db.model.User;
 import com.bribeiro.auth.rest.services.UserService;
 import com.bribeiro.auth.rest.utils.HashUtil;
 import com.bribeiro.auth.rest.utils.JwtUtil;

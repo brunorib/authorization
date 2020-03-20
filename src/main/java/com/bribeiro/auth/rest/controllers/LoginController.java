@@ -4,7 +4,7 @@ import com.bribeiro.auth.rest.application.exceptions.IncorrectLoginException;
 import com.bribeiro.auth.rest.services.LoginService;
 import com.bribeiro.auth.rest.utils.JsonUtil;
 import com.bribeiro.auth.rest.utils.ResponseError;
-import com.bribeiro.auth.rest.application.model.User;
+import com.bribeiro.auth.rest.application.db.model.User;
 
 import static spark.Spark.*;
 import static spark.Spark.after;

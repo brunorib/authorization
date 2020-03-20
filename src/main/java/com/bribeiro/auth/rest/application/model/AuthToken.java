@@ -1,4 +1,4 @@
-package com.bribeiro.auth.rest.common.models;
+package com.bribeiro.auth.rest.application.model;
 
 public class AuthToken {
 

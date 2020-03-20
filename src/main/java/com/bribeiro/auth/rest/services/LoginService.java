@@ -1,7 +1,7 @@
 package com.bribeiro.auth.rest.services;
 
 import com.bribeiro.auth.rest.application.exceptions.IncorrectLoginException;
-import com.bribeiro.auth.rest.common.models.AuthToken;
+import com.bribeiro.auth.rest.application.model.AuthToken;
 
 public interface LoginService {
 

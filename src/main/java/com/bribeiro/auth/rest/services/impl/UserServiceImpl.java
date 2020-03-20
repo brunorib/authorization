@@ -2,7 +2,7 @@ package com.bribeiro.auth.rest.services.impl;
 
 import com.bribeiro.auth.rest.application.exceptions.ServerException;
 import com.bribeiro.auth.rest.application.exceptions.UserAlreadyExistsException;
-import com.bribeiro.auth.rest.application.model.User;
+import com.bribeiro.auth.rest.application.db.model.User;
 import com.bribeiro.auth.rest.application.repository.UserRepository;
 import com.bribeiro.auth.rest.application.repository.UserRepositoryImpl;
 import com.bribeiro.auth.rest.utils.HashUtil;

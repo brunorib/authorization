@@ -1,4 +1,4 @@
-package com.bribeiro.auth.rest.application.model;
+package com.bribeiro.auth.rest.application.db.model;
 
 import javax.persistence.*;
 
