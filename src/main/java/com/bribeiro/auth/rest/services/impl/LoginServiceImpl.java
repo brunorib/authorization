@@ -1,5 +1,6 @@
 package com.bribeiro.auth.rest.services.impl;
 
+import com.bribeiro.auth.rest.common.models.AuthToken;
 import com.bribeiro.auth.rest.services.LoginService;
 import com.bribeiro.auth.rest.application.exceptions.IncorrectLoginException;
 import com.bribeiro.auth.rest.application.model.User;
@@ -16,7 +17,7 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public String login(String username, String password) throws IncorrectLoginException {
+    public AuthToken login(String username, String password) throws IncorrectLoginException {
         // Calculate
         User u = userService.findByUsername(username);
         if (u == null) {
@@ -28,7 +29,7 @@ public class LoginServiceImpl implements LoginService {
             throw new IncorrectLoginException();
         }
 
-        return JwtUtil.createJwt(u.getId());
+        return new AuthToken(JwtUtil.createJwt(u.getId()));
     }
 
     @Override
