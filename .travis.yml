@@ -13,9 +13,8 @@ secure: "Muw9vMLdPw/v8+GT8oOFZNiTVFTs1ASCZnpbrO/DRZ1XGUlZ4mOjeT/IOIbzoq3rMSU03BF
 install: true # This runs the "true" command in the install phase; thus skipping install
 script:
   - mvn verify
-  - if [[ "$TRAVIS_BRANCH" == master && "$TRAVIS_PULL_REQUEST" == false ]]
-    then mvn compile jib:build -Djib.to.auth.username=brunoribca -Djib.to.auth.password=$DOCKER_HUB_PASS
-    fi
+  if: branch = master
+    mvn compile jib:build -Djib.to.auth.username=brunoribca -Djib.to.auth.password=$DOCKER_HUB_PASS
 cache:
   directories:
     - $HOME/.m2/repository/
