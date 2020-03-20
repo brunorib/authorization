@@ -10,7 +10,6 @@ services:
 
 secure: "Muw9vMLdPw/v8+GT8oOFZNiTVFTs1ASCZnpbrO/DRZ1XGUlZ4mOjeT/IOIbzoq3rMSU03BFCPBGJvV1rOms839Fr8prRNb8fJ+iIEszL1GwGOG1ATiSNLWSvGfW9YV1jk4bBU7alC1McU6RF9zWf0lRwBR1xOn77NRvQNRiFjDF9TBu5Wch7d7+rL/iya/h5cKSWlKkJU3kFN7MLGeFCc0ShYr6ovUsDQS4rfu4iorrQ3cMcYWRxmQSky+mUNlILdt+T3Wz+RnzO5qNnx0azMknVdUAi6Nw6bqbJjTBPi9ptyBhC3Ojcjm9Ayn1v53YIj+8+XE0PM0lBxYSx91oPyAPTm6mzQokWsKe7gbUc7p7fNHPdisAVaJSQFWvgJ5B5175U3Wcdgsjoz1Qd0lM3URBN/hMICR2LsK+Qd6FcUxNNh2V3Pf98hVyHihpsZ/qX5vPzLfYJ186qqqthlCVWd6Fk2ZKOaNB/CafnjWzTHj0ri/YIMKtSpPJ0IG2kluJC5NPfygTGlRctJbHd7jTE5AkvVzldw99rfxauJm1i8LT/p0RaYgHGz+pu6jY+rQACEjGZVxmhv5kdKbwVy9uJ7s8CLdDAHFXMoGsyfXU5Mm80QQEAPHAZQrYtSdqhL6EX7NMGdHOwiriMpZiHK4uSBsmUwLsddk/trVpf6qAmYbg="
 
-install: true # This runs the "true" command in the install phase; thus skipping install
 script:
   - mvn verify
   if: branch = master
