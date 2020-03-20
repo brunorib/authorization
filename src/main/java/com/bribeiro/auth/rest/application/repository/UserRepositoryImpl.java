@@ -1,5 +1,6 @@
 package com.bribeiro.auth.rest.application.repository;
 
+import com.bribeiro.auth.config.SqlConfig;
 import com.bribeiro.auth.rest.application.exceptions.ServerException;
 import com.bribeiro.auth.rest.application.exceptions.UserAlreadyExistsException;
 import com.bribeiro.auth.rest.application.model.User;
@@ -14,7 +15,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     public UserRepositoryImpl() {
         EntityManagerFactory emf =
-                Persistence.createEntityManagerFactory("com.bribeiro.auth");
+                Persistence.createEntityManagerFactory("com.bribeiro.auth", SqlConfig.getInstance().getConfigMap());
         em = emf.createEntityManager();
     }
 
