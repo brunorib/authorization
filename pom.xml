@@ -49,7 +49,6 @@
                     </to>
                     <container>
                         <ports>
-                            <port>5432</port>
                             <port>8080</port>
                         </ports>
                         <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
