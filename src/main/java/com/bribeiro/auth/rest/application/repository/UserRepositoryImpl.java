@@ -29,17 +29,12 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User getUserByUsername(String username) {
-        List<User> search = em.createNamedQuery("getByUsername", User.class)
-            .setParameter("username", username).getResultList();
+        return getUserBy("getByUsername", "username", username);
+    }
 
-        if (search.size() == 0) {
-            return null;
-        }
-
-        User u = search.get(0);
-        em.detach(u);
-
-        return u;
+    @Override
+    public User getUserByEmail(String email) {
+        return getUserBy("getByEmail", "email", email);
     }
 
     @Override
@@ -78,5 +73,19 @@ public class UserRepositoryImpl implements UserRepository {
         em.flush();
         em.getTransaction().commit();
         return persisted;
+    }
+
+    private User getUserBy(String namedQuery, String field, String value) {
+        List<User> search = em.createNamedQuery(namedQuery, User.class)
+                .setParameter(field, value).getResultList();
+
+        if (search.size() == 0) {
+            return null;
+        }
+
+        User u = search.get(0);
+        em.detach(u);
+
+        return u;
     }
 }

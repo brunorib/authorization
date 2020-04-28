@@ -53,7 +53,11 @@ public class UserServiceImpl implements UserService {
     }
 
     public boolean existsUser(User u) {
-        return findByUsername(u.getUsername()) != null || findById(u.getId());
+        return findByUsername(u.getUsername()) != null || findByEmail(u.getEmail()) != null;
+    }
+
+    private User findByEmail(String email) {
+        return repository.getUserByEmail(email);
     }
 
     private void setPassword(User u) {
