@@ -28,6 +28,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public User createUser(User u) throws UserAlreadyExistsException, ServerException {
         setPassword(u);
+        if(!checkExists(u)) {
+            throw new UserAlreadyExistsException();
+        }
         return repository.saveUser(u);
     }
 
@@ -47,6 +50,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUsername(String username) {
         return repository.getUserByUsername(username);
+    }
+
+    public boolean checkExists(User u) {
+        return findByUsername(u.getUsername()) != null || findById(u.getId());
     }
 
     private void setPassword(User u) {

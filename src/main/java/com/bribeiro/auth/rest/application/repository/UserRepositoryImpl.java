@@ -1,8 +1,6 @@
 package com.bribeiro.auth.rest.application.repository;
 
 import com.bribeiro.auth.config.SqlConfig;
-import com.bribeiro.auth.rest.application.exceptions.ServerException;
-import com.bribeiro.auth.rest.application.exceptions.UserAlreadyExistsException;
 import com.bribeiro.auth.rest.application.db.model.User;
 
 import javax.persistence.*;
@@ -45,20 +43,11 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public User saveUser(User u) throws UserAlreadyExistsException, ServerException {
-        try {
-            em.getTransaction().begin();
-            em.persist(u);
-            em.flush();
-            em.getTransaction().commit();
-        } catch(RollbackException e) {
-            //log
-            if(e.getCause() instanceof PersistenceException) {
-                throw new UserAlreadyExistsException();
-            }
-
-            throw new ServerException();
-        }
+    public User saveUser(User u) {
+        em.getTransaction().begin();
+        em.persist(u);
+        em.flush();
+        em.getTransaction().commit();
 
         return u;
     }
