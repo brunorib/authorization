@@ -41,9 +41,7 @@ public class UserRepositoryImpl implements UserRepository {
     public User saveUser(User u) {
         em.getTransaction().begin();
         em.persist(u);
-        em.flush();
         em.getTransaction().commit();
-
         return u;
     }
 
@@ -52,7 +50,6 @@ public class UserRepositoryImpl implements UserRepository {
         em.getTransaction().begin();
         User u = em.find(User.class, id);
         em.remove(u);
-        em.flush();
         em.getTransaction().commit();
     }
 
@@ -70,7 +67,6 @@ public class UserRepositoryImpl implements UserRepository {
             persisted.setPassword(u.getPassword());
             persisted.setSalt(u.getSalt());
         }
-        em.flush();
         em.getTransaction().commit();
         return persisted;
     }
