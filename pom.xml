@@ -18,7 +18,7 @@
         <java.jwt.version>3.10.0</java.jwt.version>
         <!-- DB -->
         <postgresql.version>42.2.8</postgresql.version>
-        <hibernate.version>5.4.0.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
         <!-- BUILD RELATED -->
         <compiler.plugin.version>3.8.1</compiler.plugin.version>
         <jib.version>2.1.0</jib.version>
