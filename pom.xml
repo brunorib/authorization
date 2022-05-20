@@ -14,7 +14,7 @@
         <!-- USEFUL OBJECTS -->
         <commons.codec.version>1.9</commons.codec.version>
         <slf4j.version>1.7.7</slf4j.version>
-        <gson.version>2.8.0</gson.version>
+        <gson.version>2.8.9</gson.version>
         <java.jwt.version>3.10.0</java.jwt.version>
         <!-- DB -->
         <postgresql.version>42.2.8</postgresql.version>
